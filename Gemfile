@@ -17,6 +17,7 @@ gem 'devise',                   '~> 4.7', '>= 4.7.1'
 
 group :development, :test do
   gem 'rspec-rails',            '~> 3.9', '>= 3.9.1'
+  gem 'annotate',               '~> 2.7.5'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
