@@ -16,7 +16,7 @@ gem 'bootsnap',                 '>= 1.4.2', require: false
 gem 'devise',                   '~> 4.7', '>= 4.7.1'
 
 group :development, :test do
-  gem 'rspec-rails',            '~> 3.9', '>= 3.9.1'
+  gem 'rspec-rails',            '~> 4.0.0'
   gem 'annotate',               '~> 2.7.5'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
