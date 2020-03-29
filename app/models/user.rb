@@ -21,8 +21,13 @@
 #
 
 class User < ApplicationRecord
+  # Relationship
+  has_many :articels
+
+  # Configuration devise
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # Validates
   validates :first_name, :last_name, :birthday, presence: true
 end
