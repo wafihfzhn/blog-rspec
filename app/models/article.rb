@@ -21,4 +21,7 @@
 class Article < ApplicationRecord
   # Relationship
   belongs_to :user
+
+  # Validates
+  validates :name, :description, presence: true
 end

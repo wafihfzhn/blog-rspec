@@ -1,5 +1,5 @@
 class Public::BlogsController < ApplicationController
   def index
-    @articles = Articel.all
+    @articles = Article.all
   end
 end
