@@ -44,7 +44,7 @@ RSpec.describe Article, type: :model do
       article = Article.new(
         name: Faker::Hipster.sentence,
         description: Faker::Hipster.paragraphs,
-        user_id: 1
+        user_id: nil
       ).save
       expect(article).to eq(false) 
     end
