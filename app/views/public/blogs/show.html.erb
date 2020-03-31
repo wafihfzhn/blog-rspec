@@ -1,0 +1,11 @@
+<div class="container pt-1 pb-5 blogs">
+  <!-- Detail Article -->
+  <h4 class="mt-4"><%= @article.name %></h4>
+  <p class="written-by pb-1"><%= @article.user.first_name %> <%= @article.user.last_name %></p>
+  <p><%= @article.description %></p>
+  <p class="written-at pt-1"><%= @article.created_at.strftime("%d %b %Y") %></p>
+  <hr>
+
+  <!-- Comments -->
+  <h4>Comments</h4>
+</div>

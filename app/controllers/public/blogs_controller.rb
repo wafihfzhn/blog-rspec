@@ -4,5 +4,6 @@ class Public::BlogsController < ApplicationController
   end
 
   def show
+    @article = Article.find(params[:id])
   end
 end

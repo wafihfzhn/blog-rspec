@@ -1,6 +1,6 @@
 <div class="container pt-1 pb-5 blogs">
   <% @articles.each do |article| %>
-    <h4 class="mt-4"><%= article.name %></h4>
+    <h4 class="mt-4"><%= link_to article.name, public_blog_path(article), class: "title-article" %></h4>
     <p class="written-by pb-1"><%= article.user.first_name %> <%= article.user.last_name %></p>
     <p><%= truncate(article.description, length: 300) %></p>
     <p class="written-at pt-1"><%= article.created_at.strftime("%d %b %Y") %></p>
