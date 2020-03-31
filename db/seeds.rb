@@ -16,3 +16,14 @@ puts "Creating Users"
     password: Faker::Internet.password
   )
 end
+
+puts "Cerating Article"
+users = User.all.pluck(:id)
+
+10.times do
+  Article.create(
+    name: Faker::Hipster.sentence,
+    description: Faker::Hipster.paragraphs,
+    user_id: users.sample
+  )
+end
