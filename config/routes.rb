@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   scope module: :public, as: :public do
-    resources :blogs, only: %w[index]
+    resources :blogs, only: %w[index show]
   end
 end
