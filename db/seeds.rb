@@ -17,6 +17,8 @@ puts "Creating Users"
   )
 end
 
+User.create(first_name: "Hafizhuddin", last_name: "Wafi", birthday: "1996-07-27", email: "hafizhuddin96@gmail.com", password: "password")
+
 puts "Cerating Article"
 users = User.all.pluck(:id)
 

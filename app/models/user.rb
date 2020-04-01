@@ -22,7 +22,7 @@
 
 class User < ApplicationRecord
   # Relationship
-  has_many :articels
+  has_many :articles
 
   # Configuration devise
   devise :database_authenticatable, :registerable,

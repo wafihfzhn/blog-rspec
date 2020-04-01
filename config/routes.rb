@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :users do
-    resources :articles
+    resources :articles, only: %w[index]
   end
 
   scope module: :public, as: :public do
