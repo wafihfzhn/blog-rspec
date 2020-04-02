@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Public::BlogsController, type: :controller do
   describe "GET #index" do
-    it "Returns a success response" do
+    it "returns a success response" do
       get :index
       expect(response).to be_ok
     end
@@ -19,7 +19,7 @@ RSpec.describe Public::BlogsController, type: :controller do
       )
     end
 
-    it "Return a success response" do
+    it "return a success response" do
       article = Article.create!(
         name: Faker::Hipster.sentence,
         description: Faker::Hipster.paragraphs,

@@ -28,4 +28,20 @@ RSpec.describe Users::ArticlesController, type: :controller do
       end
     end 
   end
+
+  describe "POST #create" do
+    context "as an authenticated user" do
+      before do
+        @user = FactoryBot.create(:user)
+      end
+
+      it "added a article" do
+        article_params = FactoryBot.attributes_for(:article)
+        sign_in @user
+        expect {
+          post :create, params: { article: article_params }
+        }.to change(@user.articles, :count).by(1)
+      end
+    end 
+  end
 end
