@@ -7,7 +7,7 @@ RSpec.describe Users::ArticlesController, type: :controller do
         @user = FactoryBot.create(:user)
       end
 
-      it "responds successfully" do
+      it "return a success response" do
         sign_in @user
         get :index
         expect(response).to be_ok
@@ -21,7 +21,7 @@ RSpec.describe Users::ArticlesController, type: :controller do
         @user = FactoryBot.create(:user)
       end
 
-      it "responds successfully" do
+      it "return a success response" do
         sign_in @user
         get :new
         expect(response).to be_ok

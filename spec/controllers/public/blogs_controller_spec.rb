@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Public::BlogsController, type: :controller do
-  context "GET #index" do
+  describe "GET #index" do
     it "Returns a success response" do
       get :index
       expect(response).to be_ok
     end
   end
 
-  context "GET #show" do
+  describe "GET #show" do
     before do
       @user = User.create!(
         first_name: Faker::Name.first_name,
