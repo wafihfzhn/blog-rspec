@@ -1,14 +1,31 @@
 require 'rails_helper'
 
 RSpec.describe Users::ArticlesController, type: :controller do
-  before do
-    allow(controller).to receive(:authenticate_user!).and_return(true)
+  describe "GET #index" do
+    context "as an authenticated user" do
+      before do
+        @user = FactoryBot.create(:user)
+      end
+
+      it "responds successfully" do
+        sign_in @user
+        get :index
+        expect(response).to be_ok
+      end
+    end 
   end
-  
-  context "GET /index" do
-    it "Returns a success response" do
-      get :index
-      expect(response).to be_ok
-    end
+
+  describe "GET #new" do
+    context "as an authenticated user" do
+      before do
+        @user = FactoryBot.create(:user)
+      end
+
+      it "responds successfully" do
+        sign_in @user
+        get :new
+        expect(response).to be_ok
+      end
+    end 
   end
 end
