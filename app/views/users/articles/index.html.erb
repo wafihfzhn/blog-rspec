@@ -6,7 +6,7 @@
       <p><%= truncate(strip_tags(article.description.to_s), length: 300) %></p>
       <p class="written-at pt-1"><%= article.created_at.strftime("%d %b %Y") %></p>
       <div class="pt-1">
-        <a href="#" class="mr-1 badge badge-info">Edit Article</a>
+        <%= link_to "Edit Article", edit_users_article_path(article), class: "mr-1 badge badge-info" %>
         <a href="#" class="ml-1 badge badge-danger">Delete Article</a>
       </div>
     <% end %>

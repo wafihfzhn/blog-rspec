@@ -1,0 +1,9 @@
+<div class="container pt-1 pb-5 user-article">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1">
+      <%= form_for(@article, url: edit_users_article_path) do |f| %>
+        <%= render 'form', f: f %>
+      <% end %>
+    </div>
+  </div>
+</div>
