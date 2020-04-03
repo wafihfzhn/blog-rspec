@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :users do
-    resources :articles, only: %w[index new create]
+    resources :articles, only: %w[index new edit create update]
   end
 
   scope module: :public, as: :public do

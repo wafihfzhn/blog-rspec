@@ -9,15 +9,28 @@ class Users::ArticlesController < ApplicationController
     @article = Article.new
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
   def create
     @article = Article.new(article_params)
     @article.user = current_user
 
     if @article.save
       redirect_to public_blog_path(@article)
-      flash[:success] = "Participant was successfully created."
     else
       render :new
+    end
+  end
+
+  def update
+    @article = Article.find(params[:id])
+
+    if @article.update(article_params)
+      redirect_to public_blog_path(@article)
+    else
+      render :edit
     end
   end
 
