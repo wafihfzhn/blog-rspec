@@ -21,6 +21,7 @@
 class Article < ApplicationRecord
   # Relationship
   belongs_to :user
+  has_rich_text :description
 
   # Validates
   validates :name, :description, presence: true

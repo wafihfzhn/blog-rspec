@@ -1,0 +1,21 @@
+<div class="container pt-1 pb-5 user-article">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1">
+      <%= form_for(@article, url: users_articles_path) do |f| %>
+        <form>
+          <div class="form-group">
+            <label>Title</label>
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <%= f.rich_text_area :description, rows: 50, cols: 50 %>
+          </div>
+          <div class="form-group">
+            <%= f.submit "Create Article", class: "btn btn-success form-control" %>
+          </div>
+        </form>
+      <% end %>
+    </div>
+  </div>
+</div>
