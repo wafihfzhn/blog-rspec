@@ -1,6 +1,7 @@
 class Users::ArticlesController < ApplicationController
   before_action :authenticate_user!
-  before_action :is_authorised, only: [:edit, :update]
+  before_action :set_article, only: %w[edit update destroy]
+  before_action :is_authorised, only: %w[edit update]
 
   def index
     @articles = Article.where(user_id: current_user)
@@ -10,9 +11,7 @@ class Users::ArticlesController < ApplicationController
     @article = Article.new
   end
 
-  def edit
-    @article = Article.find(params[:id])
-  end
+  def edit; end
 
   def create
     @article = Article.new(article_params)
@@ -26,8 +25,6 @@ class Users::ArticlesController < ApplicationController
   end
 
   def update
-    @article = Article.find(params[:id])
-
     if @article.update(article_params)
       redirect_to public_blog_path(@article)
     else
@@ -35,7 +32,16 @@ class Users::ArticlesController < ApplicationController
     end
   end
 
+  def destroy
+    @article.destroy
+    redirect_to users_articles_path
+  end
+
   private
+
+  def set_article
+    @article = Article.find(params[:id])
+  end
 
   def is_authorised
     @article = Article.find(params[:id])

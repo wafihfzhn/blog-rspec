@@ -94,4 +94,21 @@ RSpec.describe Users::ArticlesController, type: :controller do
       end
     end
   end
+
+  describe "DELETE #destroy" do
+    before do
+      @article = FactoryBot.create(:article, user: @user)
+    end
+
+    it "deletes a article" do
+      expect {
+        delete :destroy, params: { id: @article.id }
+      }.to change(@user.articles, :count).by(-1)
+    end
+
+    it "redirects to the articles path" do
+      delete :destroy, params: { id: @article.id }
+      expect(response).to redirect_to users_articles_path
+    end
+  end
 end
