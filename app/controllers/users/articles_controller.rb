@@ -44,7 +44,7 @@ class Users::ArticlesController < ApplicationController
   end
 
   def is_authorised
-    @article = Article.find(params[:id])
+    @article = Article.friendly.find(params[:id])
     redirect_to users_articles_path, alert: "You do not have permission" unless current_user.id == @article.user_id
   end
 

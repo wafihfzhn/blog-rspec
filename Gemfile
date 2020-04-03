@@ -14,6 +14,7 @@ gem 'bootsnap',                   '>= 1.4.2', require: false
 
 # Costum gems
 gem 'devise',                     '~> 4.7', '>= 4.7.1'
+gem 'friendly_id',                '~> 5.3'
 
 group :development, :test do
   gem 'rspec-rails',              '~> 4.0.0'
