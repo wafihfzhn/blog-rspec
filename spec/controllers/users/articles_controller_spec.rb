@@ -43,7 +43,7 @@ RSpec.describe Users::ArticlesController, type: :controller do
       it "redirects to the article path" do
         article_params = FactoryBot.attributes_for(:article)
         post :create, params: { article: article_params }
-        expect(response).to redirect_to public_blog_path(Article.last.id)
+        expect(response).to redirect_to public_blog_path(Article.last.slug)
       end
     end
 
